@@ -12,7 +12,7 @@ doctrine:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
         dbname: '%env(DATABASE_NAME)%'
-        host: 'localhost'
+        host: 'localhost:33306'
         user: '%env(DATABASE_USER)%'
         password: '%env(DATABASE_PWD)%'
     orm:
