@@ -27,6 +27,12 @@ class Vacation
      */
     private $dateHeureFin;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Atelier::class, inversedBy="vacations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $atelier;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +58,18 @@ class Vacation
     public function setDateHeureFin(\DateTimeInterface $dateHeureFin): self
     {
         $this->dateHeureFin = $dateHeureFin;
+
+        return $this;
+    }
+
+    public function getAtelier(): ?Atelier
+    {
+        return $this->atelier;
+    }
+
+    public function setAtelier(?Atelier $atelier): self
+    {
+        $this->atelier = $atelier;
 
         return $this;
     }

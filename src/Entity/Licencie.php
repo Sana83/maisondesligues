@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LicencieRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -66,6 +68,28 @@ class Licencie
      * @ORM\Column(type="datetime")
      */
     private $dateAdhesion;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Compte::class, mappedBy="licencie")
+     */
+    private $compte;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Qualite::class, inversedBy="licencies")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $qualite;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Club::class, inversedBy="licencies")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $club;
+
+    public function __construct()
+    {
+        $this->compte = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -188,6 +212,60 @@ class Licencie
     public function setDateAdhesion(\DateTimeInterface $dateAdhesion): self
     {
         $this->dateAdhesion = $dateAdhesion;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Compte>
+     */
+    public function getCompte(): Collection
+    {
+        return $this->compte;
+    }
+
+    public function addCompte(Compte $compte): self
+    {
+        if (!$this->compte->contains($compte)) {
+            $this->compte[] = $compte;
+            $compte->setLicencie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompte(Compte $compte): self
+    {
+        if ($this->compte->removeElement($compte)) {
+            // set the owning side to null (unless already changed)
+            if ($compte->getLicencie() === $this) {
+                $compte->setLicencie(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getQualite(): ?Qualite
+    {
+        return $this->qualite;
+    }
+
+    public function setQualite(?Qualite $qualite): self
+    {
+        $this->qualite = $qualite;
+
+        return $this;
+    }
+
+    public function getClub(): ?Club
+    {
+        return $this->club;
+    }
+
+    public function setClub(?Club $club): self
+    {
+        $this->club = $club;
 
         return $this;
     }
