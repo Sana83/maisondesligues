@@ -20,7 +20,7 @@ class CategorieChambre
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, name="libelleCategorie")
      */
     private $libelleCategorie;
 

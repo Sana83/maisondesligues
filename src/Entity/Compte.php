@@ -25,7 +25,7 @@ class Compte
     private $email;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name"numLicence")
      */
     private $numLicence;
 
@@ -46,7 +46,7 @@ class Compte
 
     /**
      * @ORM\ManyToOne(targetEntity=Licencie::class, inversedBy="compte")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="idlicencie")
      */
     private $licencie;
 

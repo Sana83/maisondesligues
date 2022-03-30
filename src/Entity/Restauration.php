@@ -18,12 +18,12 @@ class Restauration
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", name="dateRestauration")
      */
     private $dateRestauration;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, name="typeRepas")
      */
     private $typeRepas;
 

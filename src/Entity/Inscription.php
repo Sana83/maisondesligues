@@ -20,7 +20,7 @@ class Inscription
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", name="dateInscription")
      */
     private $dateInscription;
 
@@ -41,7 +41,7 @@ class Inscription
 
     /**
      * @ORM\ManyToOne(targetEntity=Compte::class, inversedBy="inscriptions")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="idcompte")
      */
     private $compte;
 

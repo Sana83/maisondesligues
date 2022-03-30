@@ -18,18 +18,18 @@ class Vacation
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", name="dateHeureDebut")
      */
     private $dateHeureDebut;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", name="dateHeureFin")
      */
     private $dateHeureFin;
 
     /**
      * @ORM\ManyToOne(targetEntity=Atelier::class, inversedBy="vacations")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name"idatelier")
      */
     private $atelier;
 

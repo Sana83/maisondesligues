@@ -18,25 +18,25 @@ class Nuite
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", name="dateNuitee")
      */
     private $dateNuitee;
 
     /**
      * @ORM\ManyToOne(targetEntity=Hotel::class, inversedBy="nuites")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="idhotel")
      */
     private $hotel;
 
     /**
      * @ORM\ManyToOne(targetEntity=Inscription::class, inversedBy="nuites")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="idinscription")
      */
     private $inscription;
 
     /**
      * @ORM\ManyToOne(targetEntity=CategorieChambre::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="idcategorie")
      */
     private $categorie;
 

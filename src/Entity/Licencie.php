@@ -20,7 +20,7 @@ class Licencie
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="numLicence")
      */
     private $numLicence;
 
@@ -65,7 +65,7 @@ class Licencie
     private $mail;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", name="dateAsdhesion")
      */
     private $dateAdhesion;
 
@@ -76,13 +76,13 @@ class Licencie
 
     /**
      * @ORM\ManyToOne(targetEntity=Qualite::class, inversedBy="licencies")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="idqualite")
      */
     private $qualite;
 
     /**
      * @ORM\ManyToOne(targetEntity=Club::class, inversedBy="licencies")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="idclub")
      */
     private $club;
 
