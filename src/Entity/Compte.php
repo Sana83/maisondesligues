@@ -25,7 +25,7 @@ class Compte
     private $email;
 
     /**
-     * @ORM\Column(type="integer", name"numLicence")
+     * @ORM\Column(type="integer", name="numLicence")
      */
     private $numLicence;
 

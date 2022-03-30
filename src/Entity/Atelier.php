@@ -31,6 +31,11 @@ class Atelier
 
     /**
      * @ORM\ManyToMany(targetEntity=Inscription::class, mappedBy="ateliers")
+     * @ORM\JoinTable(
+     *      name="inscriptionAtelier",
+     *      joinColumns={@ORM\JoinColumn(name="idinscription", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="iddatelier", referencedColumnName="id")}
+     * )
      */
     private $inscriptions;
 
@@ -41,6 +46,11 @@ class Atelier
 
     /**
      * @ORM\ManyToMany(targetEntity=Theme::class, inversedBy="ateliers")
+     * @ORM\JoinTable(
+     *      name="atelierTheme",
+     *      joinColumns={@ORM\JoinColumn(name="idatelier", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idtheme", referencedColumnName="id")}
+     * )
      */
     private $themes;
 

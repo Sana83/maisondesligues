@@ -31,11 +31,21 @@ class Inscription
 
     /**
      * @ORM\ManyToMany(targetEntity=Restauration::class)
+     * @ORM\JoinTable(
+     *      name="inscriptionRestauration",
+     *      joinColumns={@ORM\JoinColumn(name="idinscription", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idrestauration", referencedColumnName="id")}
+     * )
      */
     private $restaurations;
 
     /**
      * @ORM\ManyToMany(targetEntity=Atelier::class, inversedBy="inscriptions")
+     * @ORM\JoinTable(
+     *      name="inscriptionAtelier",
+     *      joinColumns={@ORM\JoinColumn(name="idinscription", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idatelier", referencedColumnName="id")}
+     * )
      */
     private $ateliers;
 
