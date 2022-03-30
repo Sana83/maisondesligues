@@ -1,6 +1,21 @@
 /*logo*/
-.img-fluid {
-    width: 50%;
-    height: 75%;
+.img-fluid-header{
+    width: 8%;
+    height: 20%;
 }
 
+.img-fluid-footer{
+    width: 50%;
+}
+
+.navbar-collapse collapse show {
+    right: 0%;
+}
+
+.titre-base {
+    text-align: center;
+}
+
+.block-connexion-inscription {
+    right: inherit;
+}
