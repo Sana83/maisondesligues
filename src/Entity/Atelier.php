@@ -40,7 +40,7 @@ class Atelier
     private $inscriptions;
 
     /**
-     * @ORM\OneToMany(targetEntity=vacation::class, mappedBy="atelier")
+     * @ORM\OneToMany(targetEntity=vacation::class, mappedBy="atelier", orphanRemoval=true)
      */
     private $vacations;
 
