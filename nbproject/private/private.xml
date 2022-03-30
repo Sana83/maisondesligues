@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/src/Entity/Nuite.php</file>
-            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/src/Entity/CategorieChambre.php</file>
-            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/src/Entity/Hotel.php</file>
-            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/config/packages/doctrine.yaml</file>
-            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/.env</file>
-            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/src/Entity/Proposer.php</file>
-            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/docker-compose.override.yml</file>
+            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/templates/accueil/index.html.twig</file>
+            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/templates/base.html.twig</file>
+            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/src/Controller/AccueilController.php</file>
+            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/templates/elements/navbar.html.twig</file>
+            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/public/assets/images/mdlLogo.png</file>
+            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/templates/elements/footer.html.twig</file>
+            <file>file:/C:/Users/tangui.hoarau/Documents/Wampsites/maisondesliguesdistant/templates/elements/searchbar.html.twig</file>
         </group>
     </open-files>
 </project-private>
