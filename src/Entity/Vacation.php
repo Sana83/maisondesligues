@@ -29,7 +29,7 @@ class Vacation
 
     /**
      * @ORM\ManyToOne(targetEntity=Atelier::class, inversedBy="vacations")
-     * @ORM\JoinColumn(nullable=false, name"idatelier")
+     * @ORM\JoinColumn(nullable=false, name="idatelier")
      */
     private $atelier;
 
