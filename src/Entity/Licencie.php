@@ -20,7 +20,7 @@ class Licencie
     private $id;
 
     /**
-     * @ORM\Column(type="integer", name="numLicence")
+     * @ORM\Column(type="bigint", name="numLicence")
      */
     private $numLicence;
 
@@ -65,7 +65,7 @@ class Licencie
     private $mail;
 
     /**
-     * @ORM\Column(type="datetime", name="dateAsdhesion")
+     * @ORM\Column(type="datetime", name="dateAdhesion")
      */
     private $dateAdhesion;
 
