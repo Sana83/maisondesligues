@@ -30,7 +30,7 @@ class Hotel
     private $adresse1;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(nullable=true, type="string", length=255)
      */
     private $adresse2;
 
