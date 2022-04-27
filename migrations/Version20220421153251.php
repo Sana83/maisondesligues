@@ -21,8 +21,8 @@ final class Version20220421153251 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE hotel CHANGE adresse2 adresse2 VARCHAR(255) DEFAULT NULL');
-        $this->addSql('ALTER TABLE nuite ADD CONSTRAINT FK_8D4CB71537667FC1 FOREIGN KEY (idcategorie) REFERENCES CategorieChambre (id)');
-        $this->addSql('ALTER TABLE proposer ADD CONSTRAINT FK_21866C1537667FC1 FOREIGN KEY (idcategorie) REFERENCES CategorieChambre (id)');
+        //$this->addSql('ALTER TABLE nuite ADD CONSTRAINT FK_8D4CB71537667FC1 FOREIGN KEY (idcategorie) REFERENCES CategorieChambre (id)');
+        //$this->addSql('ALTER TABLE proposer ADD CONSTRAINT FK_21866C1537667FC1 FOREIGN KEY (idcategorie) REFERENCES CategorieChambre (id)');
     }
 
     public function down(Schema $schema): void
