@@ -20,11 +20,11 @@ class AccueilController extends AbstractController
     }
     
     /**
-     * @Route("/test", name="test")
+     * @Route("/pageAccueilConnecte", name="pageAccueilConnecte")
      */
     public function test(): Response
     {
-        return $this->render('accueil/test.html.twig', [
+        return $this->render('accueil/pageAccueilConnecte.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }
