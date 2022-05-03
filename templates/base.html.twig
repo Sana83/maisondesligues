@@ -13,13 +13,22 @@
         {% include 'elements/navbar.html.twig' %}
     </header>
     <body>
+        {% if app.user and app.user.isVerified == false %}
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-message">
+                    <strong>Votre compte n'est pas activé</strong>, renvoyer le lien d'activation
+                </div>
+            </div>
+        {% endif %}
+        
          <div style="padding-top:100px"> 
         {% for message in app.flashes('notification') %}
             <div class="alert alert-warning">
                 {{ message }}
             </div>
         {% endfor %}
-       
+        {% include 'flash/flash.html.twig' %}
             {% block body %} {% endblock %}
         </div>
         {% include 'elements/footer.html.twig' %}
@@ -29,6 +38,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
         {% block javascripts %}{% endblock %}
-
     </body>
 </html>

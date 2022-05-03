@@ -41,6 +41,11 @@ class User implements UserInterface
      */
     private $numeroLicence;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_verified;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -130,6 +135,18 @@ class User implements UserInterface
     public function setNumeroLicence(int $numeroLicence): self
     {
         $this->numeroLicence = $numeroLicence;
+
+        return $this;
+    }
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->is_verified;
+    }
+
+    public function setIsVerified(bool $is_verified): self
+    {
+        $this->is_verified = $is_verified;
 
         return $this;
     }
