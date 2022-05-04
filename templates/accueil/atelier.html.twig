@@ -1,0 +1,45 @@
+{% extends 'baseConnecter.html.twig' %}
+
+{% block title %}Ateliers - Maison des Ligues{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif;}
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px;}
+</style>
+<h1 class="titre-base">
+    Retrouvez ici tout les ateliers ! 
+</h1>
+
+<h2 class="titre-base">
+    <u>
+        Inscrivez vous dans l'atelier de votre choix.
+    </u>
+</h2>
+</br>
+{% if lesAteliers %}
+    <div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nom de l'atelier</th>
+                    <th scope="col">Nb de places maximum</th>
+                </tr>
+            </thead>
+    {% for ateliers in lesAteliers %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{ ateliers.getLibelle }}</th>
+                    <td>{{ ateliers.getNbPlacesMaxi }}</td>
+                </tr>
+            </tbody>
+    {% endfor %}
+        </table>
+    </div>
+{% else %}
+    <h4 class="date-hotel">
+        Aucun ateliers n'est disponible...
+    </h4>
+{% endif %}    
+
+{% endblock %}

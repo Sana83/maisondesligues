@@ -1,0 +1,34 @@
+{% extends 'baseLogin.html.twig' %}
+
+{% block title %}Inscription - Maison des ligues{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="titre-base">
+                    <u>Inscription à la maison des ligues</u>
+                </h2>
+                <br></br>
+               {{ form_start(registrationForm) }}
+                   <div class="mb-3">
+                   {{ form_row(registrationForm.numeroLicence) }}
+                   </div>
+                   <div class="mb-3">
+                   {{ form_row(registrationForm.email) }}
+                   </div>
+                   <div class="mb-3">
+                   {{ form_row(registrationForm.plainPassword, {
+                       label: 'Password'
+                   }) }}
+                   </div>
+                   <div class="mb-3">
+                   {{ form_row(registrationForm.RGPDConsent) }}
+                   </div>
+
+                   <button type="submit" class="btn btn-primary btn-lg my-3">S'inscrire</button>
+               {{ form_end(registrationForm) }}  
+            </div>
+        </div>
+    </section>
+{% endblock %}
