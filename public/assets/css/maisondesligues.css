@@ -16,6 +16,15 @@
     text-align: center;
 }
 
+.titre-base-date {
+    text-align: center;
+    color: #6610f2;
+}
+
+.date-hotel {
+    color: red;
+}
+
 .block-connexion-inscription {
     right: inherit;
 }

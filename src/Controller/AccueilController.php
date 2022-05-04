@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Controller\SearchController;
+use App\Repository\AtelierRepository;
 
 class AccueilController extends AbstractController
 {
@@ -22,10 +23,11 @@ class AccueilController extends AbstractController
     /**
      * @Route("/pageAccueilConnecte", name="pageAccueilConnecte")
      */
-    public function test(): Response
+    public function accueilAtelier(AtelierRepository $repo): Response
     {
-        return $this->render('accueil/pageAccueilConnecte.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
+        $lesAteliers = $repo->findAll();
+            return $this->render('accueil/pageAccueilConnecte.html.twig', [
+                'lesAteliers' => $lesAteliers,
+            ]);
     }
 }
