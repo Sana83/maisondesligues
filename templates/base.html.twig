@@ -13,6 +13,7 @@
         {% include 'elements/navbar.html.twig' %}
     </header>
     <body>
+        {#
         {% if app.user and app.user.isVerified == false %}
             <div class="alert alert-warning alert-dismissible" role="alert">
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -21,6 +22,7 @@
                 </div>
             </div>
         {% endif %}
+        #}
         
          <div style="padding-top:100px"> 
         {% for message in app.flashes('notification') %}
