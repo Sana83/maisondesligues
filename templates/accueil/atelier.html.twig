@@ -1,6 +1,6 @@
 {% extends 'baseConnecter.html.twig' %}
 
-{% block title %}Maison des ligues{% endblock %}
+{% block title %}Ateliers - Maison des Ligues{% endblock %}
 
 {% block body %}
 <style>
@@ -8,21 +8,14 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px;}
 </style>
 <h1 class="titre-base">
-    Bienvenue au congrès de la 6ème assises d'Escrime ! 
+    Retrouvez ici tout les ateliers ! 
 </h1>
 
 <h2 class="titre-base">
     <u>
-        Ici vous pouvez retrouver les ateliers présents et vous pouvez également réserver votre séjour.
+        Inscrivez vous dans l'atelier de votre choix.
     </u>
 </h2>
-</br>
-<h5 class="titre-base-date">
-    Le congrès se déroule le Samedi 17 et le Dimanche 18 Septembre 2022. </br>
-    <i class="date-hotel">
-        /!\ Les hôtels peuvent être réserver à partir du Vendredi 16 Septembre.
-    </i>
-</h5>
 </br>
 {% if lesAteliers %}
     <div>
@@ -31,7 +24,6 @@
                 <tr>
                     <th scope="col">Nom de l'atelier</th>
                     <th scope="col">Nb de places maximum</th>
-                    <th scope="col"></th>
                 </tr>
             </thead>
     {% for ateliers in lesAteliers %}
@@ -39,7 +31,6 @@
                 <tr>
                     <th scope="row">{{ ateliers.getLibelle }}</th>
                     <td>{{ ateliers.getNbPlacesMaxi }}</td>
-                    <td><button href="/theme">Thèmes</td>
                 </tr>
             </tbody>
     {% endfor %}
@@ -47,7 +38,8 @@
     </div>
 {% else %}
     <h4 class="date-hotel">
-        Aucun atelier n'est disponible...
+        Aucun ateliers n'est disponible...
     </h4>
-{% endif %}
+{% endif %}    
+
 {% endblock %}

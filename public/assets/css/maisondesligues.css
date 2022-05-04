@@ -22,6 +22,7 @@
 }
 
 .date-hotel {
+    text-align: center;
     color: red;
 }
 
@@ -33,4 +34,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.table{
+    margin: auto;
 }
