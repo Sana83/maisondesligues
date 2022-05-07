@@ -1,3 +1,4 @@
+{#
 {% for label, messages in app.flashes %}
     {% for message in messages %}
         {% if app.user and app.user.isVerified == false %}
@@ -11,3 +12,4 @@
     {% endfor %}
 {% endfor %}
     
+#}

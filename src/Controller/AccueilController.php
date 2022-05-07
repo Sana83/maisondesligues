@@ -23,17 +23,6 @@ class AccueilController extends AbstractController
     }
     
     /**
-     * @Route("/pageAccueilConnecte", name="pageAccueilConnecte")
-     */
-    public function accueilAtelier(AtelierRepository $repo): Response
-    {
-        $lesAteliers = $repo->findAll();
-            return $this->render('accueil/pageAccueilConnecte.html.twig', [
-                'lesAteliers' => $lesAteliers,
-            ]);
-    }
-    
-    /**
      * @Route("/atelier", name="pageAtelier")
      */
     public function atelier(AtelierRepository $repo): Response
