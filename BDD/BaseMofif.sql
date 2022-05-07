@@ -661,3 +661,99 @@ insert into mdl.hotel (ID,NOM,ADRESSE1,ADRESSE2,CP,VILLE,TEL,MAIL) values ('2','
 insert into mdl.categoriechambre (ID,libelleCategorie) values ('1','Single');
 insert into mdl.categoriechambre (ID,libelleCategorie) values ('2','Double');
 
+--TableUser--
+insert into mdl.user (id,email,roles,password) values ('1','admin@mdl.sio','[]','admin'),('2','oper@mdl.sio','[]','oper'), ('3','user@mdl.sio','[]','user');
+--Pour admin--
+UPDATE `mdl`.`user` SET `password` = '$argon2id$v=19$m=65536,t=4,p=1$eEVnY0Qzd3hvSUt5MEJrZQ$r8tmwZBIboGuQ0UwRGfGwmE0D/QI1MqbLDcZzwZTAzs' WHERE (`id` = '1');
+--Pour oper--
+UPDATE `mdl`.`user` SET `password` = '$argon2id$v=19$m=65536,t=4,p=1$QU5TaGI4N0RFVS5oSmxWag$4Kg892bkZSEbKQ0zs/9PXj+EJCts/M9u//k/tCJyqYQ' WHERE (`id` = '2');
+--Pour user--
+UPDATE `mdl`.`user` SET `password` = '$argon2id$v=19$m=65536,t=4,p=1$bmtQYWdJRkt2YXBSZ2RyTQ$wliyB1aNgo+uJrffk+QLk36Py2wb4mtb//zwdl8mi9Q' WHERE (`id` = '3');
+
+--Ajouts des éléments de la table Atelier--
+INSERT INTO `mdl`.`atelier` (`id`, `libelle`, `nbPlacesMaxi`) VALUES ('1', 'Le club et son projet', '50');
+INSERT INTO `mdl`.`atelier` (`id`, `libelle`, `nbPlacesMaxi`) VALUES ('2', 'Le fonctionnement du club', '50');
+INSERT INTO `mdl`.`atelier` (`id`, `libelle`, `nbPlacesMaxi`) VALUES ('3', 'Les outils à disposition et remis aux clubs', '50');
+INSERT INTO `mdl`.`atelier` (`id`, `libelle`, `nbPlacesMaxi`) VALUES ('4', 'Observatoire des métiers de l\'escrime', '50');
+INSERT INTO `mdl`.`atelier` (`id`, `libelle`, `nbPlacesMaxi`) VALUES ('5', 'I.F.F.E', '50');
+INSERT INTO `mdl`.`atelier` (`id`, `libelle`, `nbPlacesMaxi`) VALUES ('6', 'Développement durable', '50');
+
+--Ajouts des éléments de la table Thème--
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('1', 'Diagnostic et identification des critères du club');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('2', 'Analyse systémique de l\'environnement et méthodologie de mise en oeuvre du projet');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('3', 'Actions solidaires et innovants');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('4', 'Financements');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('5', 'Outils et documentation');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('6', 'Valoriser et communiquer sur le projet');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('7', 'Création - Obligations légales');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('8', 'Gestion du personnel, de la structure et des conflits');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('9', 'Relations internes, externes et avec le Comité Départemental, la Ligue et la Fédération');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('10', 'Conventions');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('11', 'Partenariats');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('12', 'Logiciel FFE de gestion des compétitions (présentation et formation)');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('13', 'Présentation du document \"l\'arbitrage en images\"');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('14', 'Plaquette \"guide projet du club\"');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('15', 'Labellisation du club');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('16', 'Aménagement des équipements');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('17', 'Assurances');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('18', 'Observations et analyses sur l\'encadrement actuel');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('19', 'Propositions de nouveaux schémas d\'organisation');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('20', 'Profils types et pratiques innovantes');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('21', 'Critères et seuils nécessaires à la pérennité de l\'emploi');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('22', 'Exercice du métier d\'enseignant (avantages et inconvénients)');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('23', 'Présentation');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('24', 'Fonctionnement');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('25', 'Objectifs');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('26', 'Nouveaux diplômes');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('27', 'Financements');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('28', 'Les enjeux climatiques, énergétiques et économiques');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('29', 'Sport et développement durable');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('30', 'Démarche fédérale');
+INSERT INTO `mdl`.`theme` (`id`, `libelle`) VALUES ('31', 'Echange');
+
+--Ajouts des éléments de la table AtelierTheme--
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('1', '1');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('1', '2');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('1', '3');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('1', '4');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('1', '5');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('1', '6');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('2', '7');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('2', '8');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('2', '9');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('2', '10');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('2', '11');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('3', '12');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('3', '13');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('3', '14');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('3', '15');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('3', '16');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('3', '17');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('4', '18');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('4', '19');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('4', '20');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('4', '21');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('4', '22');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('5', '23');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('5', '24');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('5', '25');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('5', '26');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('5', '27');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('6', '28');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('6', '29');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('6', '30');
+INSERT INTO `mdl`.`atelierTheme` (`idatelier`, `idtheme`) VALUES ('6', '31');
+
+--Table Proposer--
+INSERT INTO `mdl`.`proposer` (`id`, `idcategorie`, `idhotel`, `tarifNuite`) VALUES ('1', '1', '1', '50');
+INSERT INTO `mdl`.`proposer` (`id`, `idcategorie`, `idhotel`, `tarifNuite`) VALUES ('2', '2', '1', '55');
+INSERT INTO `mdl`.`proposer` (`id`, `idcategorie`, `idhotel`, `tarifNuite`) VALUES ('3', '1', '2', '45');
+INSERT INTO `mdl`.`proposer` (`id`, `idcategorie`, `idhotel`, `tarifNuite`) VALUES ('4', '2', '2', '50');
+
+--Table Vacation--
+INSERT INTO `mdl`.`vacation` (`id`, `idatelier`, `dateHeureDebut`, `dateHeureFin`) VALUES ('1', '1', '2022-09-17 08:00:00', '2022-09-17 10:00:00');
+INSERT INTO `mdl`.`vacation` (`id`, `idatelier`, `dateHeureDebut`, `dateHeureFin`) VALUES ('2', '2', '2022-09-17 10:30:00', '2022-09-17 12:30:00');
+INSERT INTO `mdl`.`vacation` (`id`, `idatelier`, `dateHeureDebut`, `dateHeureFin`) VALUES ('3', '3', '2022-09-17 14:30:00', '2022-09-17 16:30:00');
+INSERT INTO `mdl`.`vacation` (`id`, `idatelier`, `dateHeureDebut`, `dateHeureFin`) VALUES ('4', '4', '2022-09-18 08:00:00', '2022-09-18 10:00:00');
+INSERT INTO `mdl`.`vacation` (`id`, `idatelier`, `dateHeureDebut`, `dateHeureFin`) VALUES ('5', '5', '2022-09-18 10:30:00', '2022-09-18 12:30:00');
+INSERT INTO `mdl`.`vacation` (`id`, `idatelier`, `dateHeureDebut`, `dateHeureFin`) VALUES ('6', '6', '2022-09-18 14:30:00', '2022-09-18 16:30:00');
