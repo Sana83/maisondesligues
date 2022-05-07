@@ -14,10 +14,11 @@ class AccueilController extends AbstractController
     /**
      * @Route("/", name="accueil")
      */
-    public function index(): Response
+    public function index(AtelierRepository $repo): Response
     {
-        return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
+        $lesAteliers = $repo->findAll();
+            return $this->render('accueil/index.html.twig', [
+                'lesAteliers' => $lesAteliers,
         ]);
     }
     

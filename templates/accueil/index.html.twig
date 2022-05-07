@@ -7,15 +7,64 @@
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px;}
 </style>
+
 <h1 class="titre-base">
     Bienvenue au congrès de la 6ème assises d'Escrime ! 
 </h1>
-
+{% if app.user %}
+    <h2 class="titre-base">
+    <u>
+        Ici vous pouvez retrouver les ateliers présents et vous pouvez également réserver votre séjour.
+    </u>
+</h2>
+{% else %}
 <h2 class="titre-base">
     <u>
         Veuillez-vous connecter pour accèder aux services.
     </u>
+    <br>
+    <u>
+        Ici vous pouvez retrouver les ateliers présents et vous pouvez également réserver votre séjour.
+    </u>
 </h2>
-
+{% endif %}
 <img class="escrime-photo" src="{{ asset('assets/images/escrime.png') }}">
+<br>
+<h5 class="titre-base-date">
+    Le congrès se déroule le Samedi 17 et le Dimanche 18 Septembre 2022. </br>
+    <i class="date-hotel">
+        /!\ Les hôtels peuvent être réserver à partir du Vendredi 16 Septembre.
+    </i>
+</h5>
+</br>
+
+<br>
+<br>
+{% if lesAteliers %}
+    <div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nom de l'atelier</th>
+                    <th scope="col">Nb de places maximum</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+    {% for ateliers in lesAteliers %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{ ateliers.getLibelle }}</th>
+                    <td>{{ ateliers.getNbPlacesMaxi }}</td>
+                    <td><button href="/theme">Thèmes</td>
+                </tr>
+            </tbody>
+    {% endfor %}
+        </table>
+    </div>
+{% else %}
+    <h4 class="date-hotel">
+        Aucun atelier n'est disponible...
+    </h4>
+{% endif %}
 {% endblock %}
+
