@@ -3,6 +3,18 @@
 {% block title %}Connexion - Maison des ligues{% endblock %}
 
 {% block body %}
+    {% for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+    {% endfor %}
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning" role="alert">
+            {{ message }}
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+    {% endfor %}
     <section class=container my-3">
         <div class=row">
             <div class="col">
@@ -32,13 +44,12 @@
                         See https://symfony.com/doc/current/security/remember_me.html
                     #}
                         <div class="checkbox mb-3">
-                            <label>
-                                <input type="checkbox" name="_remember_me"> Se souvenir de moi
-                            </label>
+                           
+                            <a href="oubli-pass">Mot de passe oublié</a>
                         </div>
 
                     <button class="btn btn-lg btn-primary" type="submit">
-                        Connexion
+                        Envoyer
                     </button>
                 </form>
             </div>

@@ -1,15 +1,1 @@
-{#
-{% for label, messages in app.flashes %}
-    {% for message in messages %}
-        {% if app.user and app.user.isVerified == false %}
-            <div class="alert alert-{{ label }} alert-dismissible" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                <div class="alert-message">
-                    {{ message|raw }}
-                </div>
-            </div>
-        {% endif %}
-    {% endfor %}
-{% endfor %}
-    
-#}
+{# empty Twig template #}
