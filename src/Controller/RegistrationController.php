@@ -93,7 +93,7 @@ class RegistrationController extends AbstractController
         $entityManager->flush();
 
         // On génère un message
-        $this->addFlash('message', 'Utilisateur activé avec succès');
+        //$this->addFlash('message', 'Utilisateur activé avec succès');
 
         // On retourne à l'accueil
         return $this->redirectToRoute('contact');
